@@ -1,5 +1,5 @@
 # Disaster Response Message Classification
-# Disaster Response Pipeline Project
+### Disaster Response Pipeline Project
 A Flask app that classifies a disaster response message into 36 categories
 
 ### Instructions:
