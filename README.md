@@ -3,6 +3,7 @@
 A Flask app that classifies a disaster response message into 36 categories
 
 ### Instructions:
+First, download the data set from : https://drive.google.com/drive/folders/1HSbVyyXSXWuEHHogFxyFYx6SxngO6qmE?usp=sharing
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
@@ -14,6 +15,7 @@ A Flask app that classifies a disaster response message into 36 categories
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
+
 
 
 # ETL Pipeline
