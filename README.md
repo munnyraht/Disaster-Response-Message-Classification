@@ -48,18 +48,18 @@ First, download the data set from : https://drive.google.com/drive/folders/1HSbV
  ### Files in the repository 
  
  * Disaster-response 
-  ** template
-    *** go.html - an htlml file with jinja code to display the classification of the message
-    *** master.html - an html file with base codes that extends its templates
-  ** run.py - a script that loads the home page and routes to classify messages with the classifier
+  * template
+    * go.html - an htlml file with jinja code to display the classification of the message
+    * master.html - an html file with base codes that extends its templates
+  * run.py - a script that loads the home page and routes to classify messages with the classifier
  * data
-    ** process_data.py - a script that cleans data and save data in db,
-    ** DisasterResponse.db - a result from the process_data.py
-    ** disaster_messages.csv - data to be processed
-    ** disaster_categories.csv - data to be processed
+    * process_data.py - a script that cleans data and save data in db,
+    * DisasterResponse.db - a result from the process_data.py
+    * disaster_messages.csv - data to be processed
+    * disaster_categories.csv - data to be processed
  * models
-    ** train_classifier.py - read in data, tokenize, build a model and save the model as a pickle file
+    * train_classifier.py - read in data, tokenize, build a model and save the model as a pickle file
  * notebooks
-   ** ETL Pipeline Preparation.ipynb - step by step on how to process , read and save to db
-   ** ML Pipeline Preparatio.ipynb - step by step on how to build a model and improve it with GridSearchCv
+   * ETL Pipeline Preparation.ipynb - step by step on how to process , read and save to db
+   * ML Pipeline Preparatio.ipynb - step by step on how to build a model and improve it with GridSearchCv
  
