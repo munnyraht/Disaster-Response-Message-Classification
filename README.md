@@ -33,31 +33,33 @@ First, download the data set from : https://drive.google.com/drive/folders/1HSbV
  
  ## #Libraries used:
  * pandas
- * numpy 
- * matplotlib
+ * numpy
+ * scipy
+ * SQLAlchemy
+ * nltk
  * sklearn
  * plotly
  
  
  ### Motivation for the project
  This project was engineered by udacity ,
- It is the first project in the Udacity Data Science Nanodegree Program
- Data Analysis is done with the CRISP-DM process.
- 
-CRISP-DM process is generally used while data mining and is very reliable and user friendly. Here is a short description of the steps involved -
-* Understanding the business 
-* Understanding the data 
-* Preparation of data 
-* Modelling 
-* Evaluation 
- 
+ This aim of this project is classify a disaster response message into different categories in other to recognise which response unit to be alerted and to response   to the messages.
+
  ### Files in the repository 
  
- Project One folder 
- * Dataset folder - contains the Seattle AirBnb datasets
- * analysis.ipynb - Here is the code for the data Analysis
- 
-### Summary of the results of the analysis
- In summary several factors determines the price of a listing like the month, amenities,cancellation policy and so on. 
- Analysis amd explanation of these are made in the notebook markdowns
+ * Disaster-response 
+  ** template
+    *** go.html - an htlml file with jinja code to display the classification of the message
+    *** master.html - an html file with base codes that extends its templates
+  ** run.py - a script that loads the home page and routes to classify messages with the classifier
+ * data
+    ** process_data.py - a script that cleans data and save data in db,
+    ** DisasterResponse.db - a result from the process_data.py
+    ** disaster_messages.csv - data to be processed
+    ** disaster_categories.csv - data to be processed
+ * models
+    ** train_classifier.py - read in data, tokenize, build a model and save the model as a pickle file
+ * notebooks
+   ** ETL Pipeline Preparation.ipynb - step by step on how to process , read and save to db
+   ** ML Pipeline Preparatio.ipynb - step by step on how to build a model and improve it with GridSearchCv
  
