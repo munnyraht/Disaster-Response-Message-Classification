@@ -17,6 +17,13 @@ import pickle
 
 
 def load_data(database_filepath):
+    '''
+      INPUT - database_filepath : filepath where data will be read from
+      OUTPUT - X :independent variables ( mesaages)
+               Y: dependant variables or categories 
+               category name:categories names from the dataframe
+
+      '''
     engine = create_engine('sqlite:///{}'.format(database_filepath))
     conn = engine.connect()
     df = pd.read_sql_table('DisasterResponse',conn)
@@ -27,6 +34,12 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    '''
+      INPUT - text
+      OUTPUT - clean_token : tokenized text
+
+      '''
+
     tokenized = word_tokenize(text.lower())
     lemmatizer = WordNetLemmatizer()
     clean_token = []
@@ -36,6 +49,9 @@ def tokenize(text):
  
 
 def build_model():
+    '''
+      OUTPUT - a model pipeline 
+      '''
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
@@ -51,6 +67,12 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    '''
+      INPUT - model : a defined model pipeline
+              X_test: test set of the independent variables (messages)
+              Y_test: test set of the dependent variables (categories)
+              category_names : categories names from the dataframe
+      '''
     y_pred = model.predict(X_test)
     
     for i,column in enumerate(Y_test.columns):
@@ -62,10 +84,21 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    '''
+      INPUT - model: a trained model
+              model_filepath: filepath where model is to be saved
+
+      '''
+
     pickle.dump(model, open(model_filepath, 'wb'))
     return
 
 def main():
+    '''
+        A function that puts the above functions altogether, loads data from db
+        splits data, build a model, trains a model, evaluates the trained model and saves the model
+      '''
+
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
